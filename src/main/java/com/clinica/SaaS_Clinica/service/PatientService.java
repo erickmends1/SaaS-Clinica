@@ -1,6 +1,7 @@
 package com.clinica.SaaS_Clinica.service;
 
 import com.clinica.SaaS_Clinica.domain.Patient;
+import com.clinica.SaaS_Clinica.domain.User;
 import com.clinica.SaaS_Clinica.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +17,9 @@ public class PatientService {
     public List<Patient> findAll(){
         List<Patient> list = repository.findAll();
         return list;
+    }
+
+    public Patient insert(Patient obj){
+        return  repository.save(obj);
     }
 }
