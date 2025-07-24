@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -21,6 +22,9 @@ public class Patient implements Serializable {
 
     @Column(unique = true)
     private String cpf;
+
+    @OneToMany(mappedBy = "patient")
+    private List<Consultation> consultations;
 
     public Patient(){
     }
